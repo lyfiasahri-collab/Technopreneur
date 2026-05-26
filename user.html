@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard User</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top bg-primary">
+    <div class="container">
+        <a class="navbar-brand text-white" href="index.html">TechnoPreneur</a>
+
+        <!--Bagian Menu-->
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link text-white" href="riwayat.html">Riwayat Sertifikasi</a>
+            <a class="nav-link text-white" href="index.html">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<section class="d-flex align-items-center" style="min-height: 90vh;">
+    <div class="container text-center">
+        <h1 class="mb-3">Hallo Selamat Datang User</h1>
+        <p>Anda berhasil login sebagai <b>User</b></p>
+    </div>
+
+   
+</section> 
+    <section id="Daftar Sertifikasi" class="bg-dua">
+        <div class="container">
+            <div class="row">
+
+              <div class="col-3 my-5">
+                    <div class="card">
+                        <img src="assets/logo dev.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Junior Web Developer</h5>
+                            <p class="card-text">Harga: Rp 2.500.000<br>Durasi: 60jp (10 Pertemuan)</p>
+                         <br>  <button onclick="tambahRiwayat('Junior Web Developer', 'Rp 2.500.000', '60Jp (10 Pertemuan)')" class="btn btn-primary w-100">Daftar</button>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="col-3 my-5">
+                    <div class="card">
+                        <img src="assets/logo designer.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Junior Web Developer</h5>
+                            <p class="card-text">Harga: Rp 2.500.000<br>Durasi: 60jp (10 Pertemuan)</p>
+                         <br>  <button onclick="tambahRiwayat('Junior Web Developer', 'Rp 2.500.000', '60Jp (10 Pertemuan)')" class="btn btn-primary w-100">Daftar</button>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="col-3 my-5">
+                    <div class="card">
+                        <img src="assets/logo admin.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Junior Web Developer</h5>
+                            <p class="card-text">Harga: Rp 2.500.000<br>Durasi: 60jp (10 Pertemuan)</p>
+                         <br>  <button onclick="tambahRiwayat('Junior Web Developer', 'Rp 2.500.000', '60Jp (10 Pertemuan)')" class="btn btn-primary w-100">Daftar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 my-5">
+                    <div class="card">
+                        <img src="assets/logo office.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Junior Web Developer</h5>
+                            <p class="card-text">Harga: Rp 2.500.000<br>Durasi: 60jp (10 Pertemuan)</p>
+                         <br>  <button onclick="tambahRiwayat('Junior Web Developer', 'Rp 2.500.000', '60Jp (10 Pertemuan)')" class="btn btn-primary w-100">Daftar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="bg-satu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-5">
+                    <div class="info-area">
+                        <h2>Kontak Kami</h2>
+                        <p>Jl. Teknologi Digital No. 8 Kecamatan Cempaka Putih Jakarta Pusat 10510 Indonesia </p>
+                        <p>📞 (021) 555-8899</p>
+                        <p>📧 info@TechnoPreneur.id</p>
+                        <p>🌐 www.TechnoPreneur.id</p>
+                        <p>Jam Operasional</p>
+                        <p>• Senin  Jumat : 08.00 - 20.00 WIB</p>
+                        <p>• Sabtu : 09.00 - 17.00 WIB</p> 
+                        <p>• Minggu & Hari Libur : Tutup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- FOOTER -->
+<footer class="bg-black text-white py-4">
+    <div class="container text-center">
+        <p class="mb-1">&copy; 2026 LSP TechnoPreneur |  Hak Cipta pada SMK Dinamika Pembangunan 2 Jakarta</p>
+    </div>
+</footer>
+<script>
+        function tambahRiwayat(nama, harga, durasi) {
+            let daftarRiwayat = JSON.parse(localStorage.getItem('riwayatSertifikasi')) || [];
+            
+        
+            daftarRiwayat.push({
+                nama: nama,
+                harga: harga,
+                durasi: durasi
+            });
+            
+            localStorage.setItem('riwayatSertifikasi', JSON.stringify(daftarRiwayat));
+            
+            alert('Pendaftaran ' + nama + ' berhasil!');
+            window.location.href = 'riwayat.html';
+        }
+    </script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/kursus.js"></script>
+
+</body>
+</html>
